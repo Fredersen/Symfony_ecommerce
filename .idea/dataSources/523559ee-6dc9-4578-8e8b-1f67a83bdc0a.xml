@@ -1185,135 +1185,234 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Host>localhost</Host>
       <Plugin>auth_socket</Plugin>
     </user>
-    <table id="309" parent="279" name="doctrine_migration_versions">
+    <table id="309" parent="279" name="category">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_unicode_ci</CollationName>
+    </table>
+    <table id="310" parent="279" name="doctrine_migration_versions">
       <Engine>InnoDB</Engine>
       <CollationName>utf8_unicode_ci</CollationName>
     </table>
-    <table id="310" parent="279" name="messenger_messages">
+    <table id="311" parent="279" name="messenger_messages">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_unicode_ci</CollationName>
     </table>
-    <table id="311" parent="279" name="user">
+    <table id="312" parent="279" name="product">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_unicode_ci</CollationName>
     </table>
-    <column id="312" parent="309" name="version">
-      <DataType>varchar(191)|0s</DataType>
+    <table id="313" parent="279" name="user">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_unicode_ci</CollationName>
+    </table>
+    <column id="314" parent="309" name="id">
+      <AutoIncrement>1</AutoIncrement>
+      <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="313" parent="309" name="executed_at">
-      <DataType>datetime|0s</DataType>
+    <column id="315" parent="309" name="name">
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="314" parent="309" name="execution_time">
-      <DataType>int|0s</DataType>
-      <Position>3</Position>
-    </column>
-    <index id="315" parent="309" name="PRIMARY">
-      <ColNames>version</ColNames>
+    <index id="316" parent="309" name="PRIMARY">
+      <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="316" parent="309" name="PRIMARY">
+    <key id="317" parent="309" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="317" parent="310" name="id">
+    <column id="318" parent="310" name="version">
+      <DataType>varchar(191)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="319" parent="310" name="executed_at">
+      <DataType>datetime|0s</DataType>
+      <Position>2</Position>
+    </column>
+    <column id="320" parent="310" name="execution_time">
+      <DataType>int|0s</DataType>
+      <Position>3</Position>
+    </column>
+    <index id="321" parent="310" name="PRIMARY">
+      <ColNames>version</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="322" parent="310" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="323" parent="311" name="id">
       <AutoIncrement>1</AutoIncrement>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="318" parent="310" name="body">
+    <column id="324" parent="311" name="body">
       <DataType>longtext|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="319" parent="310" name="headers">
+    <column id="325" parent="311" name="headers">
       <DataType>longtext|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="320" parent="310" name="queue_name">
+    <column id="326" parent="311" name="queue_name">
       <DataType>varchar(190)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="321" parent="310" name="created_at">
+    <column id="327" parent="311" name="created_at">
       <DataType>datetime|0s</DataType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <column id="322" parent="310" name="available_at">
+    <column id="328" parent="311" name="available_at">
       <DataType>datetime|0s</DataType>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
-    <column id="323" parent="310" name="delivered_at">
+    <column id="329" parent="311" name="delivered_at">
       <DataType>datetime|0s</DataType>
       <Position>7</Position>
     </column>
-    <index id="324" parent="310" name="PRIMARY">
+    <index id="330" parent="311" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="325" parent="310" name="IDX_75EA56E0FB7336F0">
+    <index id="331" parent="311" name="IDX_75EA56E0FB7336F0">
       <ColNames>queue_name</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="326" parent="310" name="IDX_75EA56E0E3BD61CE">
+    <index id="332" parent="311" name="IDX_75EA56E0E3BD61CE">
       <ColNames>available_at</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="327" parent="310" name="IDX_75EA56E016BA31DB">
+    <index id="333" parent="311" name="IDX_75EA56E016BA31DB">
       <ColNames>delivered_at</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="328" parent="310" name="PRIMARY">
+    <key id="334" parent="311" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="329" parent="311" name="id">
+    <column id="335" parent="312" name="id">
       <AutoIncrement>1</AutoIncrement>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="330" parent="311" name="email">
-      <DataType>varchar(180)|0s</DataType>
+    <column id="336" parent="312" name="category_id">
+      <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="331" parent="311" name="roles">
-      <DataType>json|0s</DataType>
+    <column id="337" parent="312" name="name">
+      <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="332" parent="311" name="password">
+    <column id="338" parent="312" name="slug">
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <index id="333" parent="311" name="PRIMARY">
+    <column id="339" parent="312" name="illustration">
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <column id="340" parent="312" name="subtitile">
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>6</Position>
+    </column>
+    <column id="341" parent="312" name="description">
+      <DataType>longtext|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>7</Position>
+    </column>
+    <column id="342" parent="312" name="price">
+      <DataType>double|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>8</Position>
+    </column>
+    <foreign-key id="343" parent="312" name="FK_D34A04AD12469DE2">
+      <ColNames>category_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>category</RefTableName>
+    </foreign-key>
+    <index id="344" parent="312" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="334" parent="311" name="UNIQ_8D93D649E7927C74">
-      <ColNames>email</ColNames>
+    <index id="345" parent="312" name="IDX_D34A04AD12469DE2">
+      <ColNames>category_id</ColNames>
       <Type>btree</Type>
-      <Unique>1</Unique>
     </index>
-    <key id="335" parent="311" name="PRIMARY">
+    <key id="346" parent="312" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <key id="336" parent="311" name="UNIQ_8D93D649E7927C74">
+    <column id="347" parent="313" name="id">
+      <AutoIncrement>25</AutoIncrement>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="348" parent="313" name="email">
+      <DataType>varchar(180)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="349" parent="313" name="roles">
+      <DataType>json|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="350" parent="313" name="password">
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <column id="351" parent="313" name="firstname">
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <column id="352" parent="313" name="lastname">
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>6</Position>
+    </column>
+    <index id="353" parent="313" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="354" parent="313" name="UNIQ_8D93D649E7927C74">
+      <ColNames>email</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="355" parent="313" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <key id="356" parent="313" name="UNIQ_8D93D649E7927C74">
       <UnderlyingIndexName>UNIQ_8D93D649E7927C74</UnderlyingIndexName>
     </key>
   </database-model>
