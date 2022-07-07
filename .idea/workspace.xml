@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="522c5075-1b59-4025-b726-cd69a6678328" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/account/adress.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/account/adress_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/523559ee-6dc9-4578-8e8b-1f67a83bdc0a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/523559ee-6dc9-4578-8e8b-1f67a83bdc0a.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/account/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/account/index.html.twig" afterDir="false" />
-    </list>
+    <list default="true" id="522c5075-1b59-4025-b726-cd69a6678328" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -225,6 +218,7 @@
       <workItem from="1657198924595" duration="311000" />
       <workItem from="1657199269571" duration="1809000" />
       <workItem from="1657231462200" duration="2763000" />
+      <workItem from="1657234636922" duration="327000" />
     </task>
     <servers />
   </component>
