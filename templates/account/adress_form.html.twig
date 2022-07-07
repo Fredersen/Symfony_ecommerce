@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter une adresse{% endblock %}
+
+{% block content %}
+    <a href="" class="btn btn-info btn-sm float-right">Ajouter une adresse</a>
+    <h1>Ajouter une adresse :</h1>
+    <a href="{{ path('app_account') }}">Retour</a>
+    {{ form_start(form) }}
+    <div class="row">
+        <div class="col-md-12">{{ form_row(form.name) }}</div>
+        <div class="col-md-6">{{ form_row(form.firstName) }}</div>
+        <div class="col-md-6">{{ form_row(form.lastName) }}</div>
+        <div class="col-md-6">{{ form_row(form.company) }}</div>
+        <div class="col-md-6">{{ form_row(form.adress) }}</div>
+        <div class="col-md-6">{{ form_row(form.postal) }}</div>
+        <div class="col-md-6">{{ form_row(form.city) }}</div>
+        <div class="col-md-6">{{ form_row(form.country) }}</div>
+        <div class="col-md-6">{{ form_row(form.phone) }}</div>
+    </div>
+    {{ form_end(form) }}
+{% endblock %}
