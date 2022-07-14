@@ -8,6 +8,7 @@ use App\Repository\AdressRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\Routing\Annotation\Route;
 
 class AccountAdressController extends AbstractController
@@ -20,7 +21,7 @@ class AccountAdressController extends AbstractController
     }
 
     #[Route('/compte/ajouter-une-adresse', name: 'app_account_adress_add')]
-    public function add(Request $request, AdressRepository $adressRepository): Response
+    public function add(Request $request, AdressRepository $adressRepository, Session $session): Response
     {
         $address = new Adress();
         $form = $this->createForm(AdressType::class, $address);
@@ -30,7 +31,9 @@ class AccountAdressController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $address->setUser($this->getUser());
             $adressRepository->add($address, true);
-
+            if($session->get('cart')) {
+                return $this->redirectToRoute('app_order');
+            }
            return $this->redirectToRoute('app_account_adress');
         }
 

@@ -2,12 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="522c5075-1b59-4025-b726-cd69a6678328" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/account/adress.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/account/adress_form.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/order/add.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Symfony ecommerce.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Symfony ecommerce.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/523559ee-6dc9-4578-8e8b-1f67a83bdc0a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/523559ee-6dc9-4578-8e8b-1f67a83bdc0a.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/css/symfonyEcommerce.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/symfonyEcommerce.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AccountAdressController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AccountAdressController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/DashboardController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/UserCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/UserCrudController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CartController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Adress.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Adress.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/account/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/account/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/AdressType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/AdressType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/cart/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cart/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,6 +178,25 @@
       <path value="$PROJECT_DIR$/vendor/easycorp/easyadmin-bundle" />
       <path value="$PROJECT_DIR$/vendor/symfony/uid" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-uuid" />
+      <path value="$PROJECT_DIR$/vendor/league/uri-parser" />
+      <path value="$PROJECT_DIR$/vendor/league/uri" />
+      <path value="$PROJECT_DIR$/vendor/league/uri-interfaces" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/amphp/serialization" />
+      <path value="$PROJECT_DIR$/vendor/amphp/byte-stream" />
+      <path value="$PROJECT_DIR$/vendor/daverandom/libdns" />
+      <path value="$PROJECT_DIR$/vendor/amphp/parser" />
+      <path value="$PROJECT_DIR$/vendor/amphp/http-client" />
+      <path value="$PROJECT_DIR$/vendor/amphp/amp" />
+      <path value="$PROJECT_DIR$/vendor/amphp/socket" />
+      <path value="$PROJECT_DIR$/vendor/kelunik/certificate" />
+      <path value="$PROJECT_DIR$/vendor/amphp/cache" />
+      <path value="$PROJECT_DIR$/vendor/amphp/sync" />
+      <path value="$PROJECT_DIR$/vendor/amphp/hpack" />
+      <path value="$PROJECT_DIR$/vendor/amphp/windows-registry" />
+      <path value="$PROJECT_DIR$/vendor/amphp/dns" />
+      <path value="$PROJECT_DIR$/vendor/amphp/http" />
+      <path value="$PROJECT_DIR$/vendor/amphp/process" />
     </include_path>
   </component>
   <component name="ProjectId" id="2BJaF8XfZHw6laUl7U5y25ZH9W4" />
@@ -225,6 +256,12 @@
       <workItem from="1657198924595" duration="311000" />
       <workItem from="1657199269571" duration="1809000" />
       <workItem from="1657231462200" duration="2763000" />
+      <workItem from="1657402034585" duration="4581000" />
+      <workItem from="1657493187264" duration="4181000" />
+      <workItem from="1657663273305" duration="706000" />
+      <workItem from="1657670750628" duration="5379000" />
+      <workItem from="1657757288478" duration="376000" />
+      <workItem from="1657757980777" duration="1574000" />
     </task>
     <servers />
   </component>
