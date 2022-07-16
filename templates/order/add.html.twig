@@ -1,5 +1,9 @@
 {% extends 'base.html.twig' %}
 
+{% block javascript %}
+<script src="https://js.stripe.com/v3/"></script>
+{% endblock %}
+
 {% block title %}Paiement de ma commande !{% endblock %}
 
 {% block content %}
@@ -16,7 +20,7 @@
                 <strong>Mon transporteur</strong>
                 {{ carrier.name }}<br>
                 {{ carrier.description }}<br>
-                {{ carrier.price }}
+                {{ carrier.price / 100 }} €
             </div>
         </div>
         <div class="col-md-6">
@@ -46,10 +50,10 @@
             </div>
             <hr>
             <strong>Sous-Total :</strong> {{ (total / 100)|number_format(2, ',') }} €<br/>
-            <strong>Livraison :</strong> {{ carrier.price|number_format(2, ',') }} € <br/>
+            <strong>Livraison :</strong> {{ (carrier.price / 100)|number_format(2, ',') }} € <br/>
             <hr>
-            <strong>Total:</strong> {{ ((total / 100) + carrier.price)|number_format(2, ',') }} €
-            <a href="" class="btn btn-success btn-block mt-3">Payer {{ ((total / 100) + carrier.price)|number_format(2, ',') }} €</a>
+            <strong>Total:</strong> {{ ((total / 100) +  (carrier.price / 100))|number_format(2, ',') }} €
+            <a href="{{ path('app_order_checkout', {'reference': reference }) }}" id="checkout-button" class="btn btn-success btn-block mt-3">Payer {{ ((total / 100) + (carrier.price / 100))|number_format(2, ',') }} €</a>
         </div>
     </div>
 {% endblock %}

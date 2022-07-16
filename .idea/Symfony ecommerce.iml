@@ -157,6 +157,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/amphp/dns" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/amphp/http" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/amphp/process" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/stripe/stripe-php" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
