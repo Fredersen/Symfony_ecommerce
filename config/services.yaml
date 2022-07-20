@@ -5,6 +5,8 @@
 # https://symfony.com/doc/current/best_practices.html#use-parameters-for-application-configuration
 parameters:
     STRIPE_KEY: '%env(STRIPE_KEY)%'
+    MAIL_KEY: '%env(MAIL_KEY)%'
+    MAIL_SECRET_KEY: '%env(MAIL_SECRET_KEY)%'
 
 services:
     # default configuration for services in *this* file

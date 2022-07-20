@@ -3,16 +3,21 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Order;
+use App\Repository\OrderRepository;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
+use EasyCorp\Bundle\EasyAdminBundle\Context\AdminContext;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ArrayField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\MoneyField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator;
 
 class OrderCrudController extends AbstractCrudController
 {
@@ -23,8 +28,26 @@ class OrderCrudController extends AbstractCrudController
 
     public function configureActions(Actions $actions): Actions
     {
+        $updatePrepation = Action::new('updatePreparation', 'Préparation en cours', 'fas fa-box-open')->linkToCrudAction('updatePreparation');
         return $actions
+            ->add('detail', $updatePrepation)
             ->add(Crud::PAGE_INDEX, Action::DETAIL);
+    }
+
+    public function updatePreparation(AdminContext $context, OrderRepository $orderRepository, AdminUrlGenerator $adminUrlGenerator)
+    {
+        $order = $context->getEntity()->getInstance();
+        $order->setState(2);
+        $orderRepository->add($order, 1);
+
+        $this->addFlash('notice', "<span style='color:green;'>La commande est bien en cours de préparation</span>");
+
+        $url = $adminUrlGenerator
+            ->setController(OrderCrudController::class)
+            ->setAction(Action::INDEX)
+            ->generateUrl();
+
+        return $this->redirect($url);
     }
 
     public function configureCrud(Crud $crud): Crud
@@ -41,10 +64,16 @@ class OrderCrudController extends AbstractCrudController
             IdField::new('id'),
             DateTimeField::new('createdAt'),
             TextField::new('user.fullname', 'Client'),
+            TextEditorField::new('delivery', 'Adresse de livraion')->onlyOnDetail(),
             MoneyField::new('total', 'Total produit')->setCurrency('EUR'),
             TextField::new('carrierName', 'Transporteur'),
             MoneyField::new('carrierPrice', 'Frais de port')->setCurrency('EUR'),
-            BooleanField::new('isPaid', 'Payée ?'),
+            ChoiceField::new('state', 'Statut')->setChoices([
+                'Non Payée' => 0,
+                'Payée' => 1,
+                'Préparation en cours' => 2,
+                'Livraison en cours' => 3
+            ]),
             ArrayField::new('orderDetails', 'Produits achetés')->hideOnIndex()
         ];
     }
