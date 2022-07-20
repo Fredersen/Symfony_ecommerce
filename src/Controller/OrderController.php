@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Classe\Mail;
 use App\Entity\Order;
 use App\Entity\OrderDetails;
 use App\Form\OrderType;
@@ -110,7 +111,7 @@ class OrderController extends AbstractController
                 ->setCarrierName($form->get('carriers')->getData()->getName())
                 ->setCarrierPrice($form->get('carriers')->getData()->getPrice())
                 ->setDelivery($deliveryContent)
-                ->setIsPaid(0);
+                ->setState(0);
 
             $this->orderRepository->add($order, true);
 
@@ -197,7 +198,7 @@ class OrderController extends AbstractController
     }
 
     #[Route('/commande/merci/{sessionId}', name: 'app_order_success')]
-    public function success($sessionId, OrderRepository $orderRepository, Session $session)
+    public function success($sessionId, OrderRepository $orderRepository, Session $session, Mail $mail)
     {
         $order = $orderRepository->findOneBy(['stripeSessionId' => $sessionId]);
 
@@ -205,10 +206,14 @@ class OrderController extends AbstractController
             return $this->redirectToRoute('app_home');
         }
 
-        if(!$order->getIsPaid()) {
-            $order->setIsPaid(1);
+        if($order->getState() == 0) {
+            $order->setState(1);
             $orderRepository->add($order, 1);
             $session->remove('cart');
+
+            $content = "Votre commande s'est bien déroulé";
+            $mail->send($this->getUser()->getEmail(), $this->getUser()->getFullname(), 'Bienvenue sur la boutique symfony', $content);
+            $notification = "Votre inscription s'est déroulé correctement";
         }
 
         return $this->render('order/success.html.twig', [

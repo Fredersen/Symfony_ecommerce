@@ -46,10 +46,12 @@ class ProductController extends AbstractController
     }
 
     #[Route('/produit/{slug}', name: 'app_product')]
-    public function show(Product $product): Response
+    public function show(Product $product, ProductRepository $productRepository): Response
     {
+        $products = $productRepository->findBy(['onHomepage'  => 1]);
         return $this->render('product/show.html.twig', [
             'product' => $product,
+            'products' => $products
         ]);
     }
 }
